@@ -1,3 +1,4 @@
+
 // Wonjin Choi
 // CMSY-141/181 Computer Science I/Intro C++
 // LAB_07 10/10/15
@@ -18,7 +19,7 @@ int main()
 	
 	int stuff, quarters;
 	string companies[SIZE] = { "MSFT" , "APPL","T   ","GPRO ", "IBM " , "GOOG" , "TSLA", "YHOO", "FB  ","WC  " };
-	int quaterly[ROW][COLU] = 
+	double quaterly[ROW][COLU] = 
 	{		
 		{53020.00, 80090.00, 23050.00 ,23500.00},
 		{35070.00, 45230.00, 55030.00, 65000.00},
@@ -38,11 +39,11 @@ int main()
 	//Store values in the array.
 	for (int row = 0; row < ROW; row++)
 	{
-		WriteDataFile << "\t" << companies[row];
+		WriteDataFile << companies[row];
 
 		for (int col = 0; col < COLU; col++)
 		{
-			WriteDataFile << "\t\t" << quaterly[row][col];
+			WriteDataFile << "\t" << fixed << setprecision(2) <<  quaterly[row][col];
 		}
 
 		WriteDataFile << endl;
@@ -50,12 +51,9 @@ int main()
 
 	// Close the file.
 	WriteDataFile.close();
-
-	system("notepad.exe Data.txt");
 	
-	cout << endl; 
-	cout << "Lab-07 Wonjin Choi" << endl; 
+	cout << "Lab-07 Wonjin Choi" << endl;	
 	system("Pause");
+	system("notepad.exe Data.txt");
 	return 0;
 }
-
