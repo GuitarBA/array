@@ -51,6 +51,7 @@ int main()
 	// Close the file.
 	WriteDataFile.close();
 
+	system("notepad.exe Data.txt");
 	
 	cout << endl; 
 	cout << "Lab-07 Wonjin Choi" << endl; 
