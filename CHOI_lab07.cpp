@@ -1,3 +1,4 @@
+
 // Wonjin Choi
 // CMSY-141/181 Computer Science I/Intro C++
 // LAB_07 10/10/15
@@ -13,11 +14,10 @@ const int COLU = 4;
 
 int main()
 {	
-	int count;
 	ofstream WriteDataFile;
 	
 	int stuff, quarters;
-	string companies[SIZE] = { "MSFT" , "APPL","T","GPRO ", "IBM" , "GOOG" , "TSLA", "YHOO", "FB","WC" };
+	string companies[SIZE] = { "MSFT" , "APPL","T   ","GPRO ", "IBM " , "GOOG" , "TSLA", "YHOO", "FB  ","WC  " };
 	int quaterly[ROW][COLU] = 
 	{		
 		{53020.00, 80090.00, 23050.00 ,23500.00},
@@ -36,15 +36,20 @@ int main()
 	WriteDataFile.open("Data.txt");
 	
 	//Store values in the array.
-		for (count = 0; count < SIZE; count++)
-		companies[count] = count;
-		
-		// Write the array contents to the file.
-		for (count = 0; count < SIZE; count++)
-			WriteDataFile << companies[count] << endl;
-		
-		// Close the file.
-		WriteDataFile.close();
+	for (int row = 0; row < ROW; row++)
+	{
+		WriteDataFile << "\t" << companies[row];
+
+		for (int col = 0; col < COLU; col++)
+		{
+			WriteDataFile << "\t\t" << quaterly[row][col];
+		}
+
+		WriteDataFile << endl;
+	}
+
+	// Close the file.
+	WriteDataFile.close();
 
 	
 	cout << endl; 
