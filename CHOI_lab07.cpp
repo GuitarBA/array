@@ -1,4 +1,3 @@
-
 // Wonjin Choi
 // CMSY-141/181 Computer Science I/Intro C++
 // LAB_07 10/10/15
@@ -6,6 +5,7 @@
 #include <string>
 #include <iomanip>
 #include <fstream>
+
 using namespace std;
 
 const int SIZE = 10;
